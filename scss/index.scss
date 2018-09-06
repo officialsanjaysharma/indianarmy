@@ -1,0 +1,469 @@
+@import 'custom';
+@import '~bootstrap/scss/bootstrap';
+
+/*  General Styling
+/*-----------------------------------------------------------------------------------*/
+
+
+body {
+    background: map-get($colors,primary);
+    color: map-get($fontColor,primary);
+    font-family: 'Poppins', helvetica;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  span { font-size:40px; }
+  .type-cursor {
+     color:map-get($fontColor,accent);
+     animation:blink .4s ease infinite;
+     opacity:0;
+     }
+ @keyframes blink {
+   100% { 
+     opacity:1;
+   }
+ }
+.navbar{
+  position:fixed;
+}
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  h2 {
+    color: map-get($fontColor,sub1);
+    font-weight: 600;
+  }
+  
+  h4 {
+    color: map-get($fontColor,sub1);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  a {
+    color: map-get($fontColor,sub1);
+    text-decoration: none !important;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  a:hover {
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  a:hover, a:focus {
+    color: map-get($fontColor,sub2);
+    text-decoration: underline;
+  }
+  
+  nav ul li a {
+    padding: 2px 0 0 0;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    color:  map-get($fontColor,sub3);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  p {
+    margin: 25px 0;
+    padding: 0;
+    font-size: 15px;
+    color:  map-get($fontColor,sub3);
+    line-height: 28px;
+  }
+  
+  ::-moz-selection {
+    background: map-get($colors,accent);
+    color: map-get($fontColor,accent);
+  }
+  
+  ::selection {
+    background: map-get($colors,accent);
+    color: map-get($fontColor,accent);
+  }
+  
+  .btn {
+    background: map-get($fontColor,sub1);
+    border: medium none;
+    border-radius: 0;
+    color: map-get($fontColor,accent);
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    text-transform: uppercase;
+  }
+  
+  .btn:hover, .btn:focus {
+    color: map-get($fontColor,accent);
+  }
+  
+  .padDiv {
+    padding: 30px 20px;
+  }
+  
+  .section-title {
+    margin-bottom: 70px;
+  }
+  
+  .section-title h2 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .form-control {
+    background-color:transparent;
+    border: 1px solid  map-get($borderColor,primary);
+    border-radius: 0;
+    color:  map-get($fontColor,sub3);
+    font-size: 12px;
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: 0.1em;
+    padding-left: 10px;
+    margin: 0 0 25px 0;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    outline: 0 none;
+  }
+  
+  .paddsection {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  
+  .paddsections {
+    padding-top: 90px;
+    padding-bottom: 90px !important;
+  }
+  
+  .hvr-shutter-in-horizontal::before {
+    background: map-get($fontColor,sub1);
+  }
+  
+  .hvr-shutter-in-horizontal:hover {
+    background: map-get($colors,accent);
+  }
+  
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+  
+  /*-----------------------------------------------------------------------------------*/
+  /*  Navbar Top
+  /*-----------------------------------------------------------------------------------*/
+  
+  nav {
+    position: fixed;
+    background: map-get($colors,primary);
+    z-index: 1000;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.18);
+  }
+  
+  .nav-menu {
+    float: right;
+    line-height: 32px;
+    margin-bottom: 0;
+    padding-top: 16px;
+  }
+  
+  nav ul li {
+    float: left;
+    margin-right: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-left: 40px;
+  }
+  
+  nav ul li a {
+    padding: 2px 0 0 0;
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color:  map-get($fontColor,sub3);
+    font-family: 'Poppins', helvetica;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+  }
+  
+  
+  .responsive {
+    display: none;
+    font-size: 23px;
+  }
+  
+  .active {
+    color: map-get($colors,sub4);
+  }
+  
+//   /*----------------------------------------------------------------------------------*/
+//   /*  Header
+//   /*-----------------------------------------------------------------------------------*/
+  
+  #header {
+    background-image: url("/images/thumb-1920-100445.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .fa{
+    color:map-get($fontColor,accent);
+  }
+  
+  #header .header-content {
+    height: 100vh;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .header-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: map-get($fontColor,accent);
+  }
+  
+  .header-content p {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    color: map-get($fontColor,accent);
+    font-weight: 500;
+  }
+  
+  .header-content .list-social li {
+    float: left;
+    margin-right: 20px;
+  }
+  
+  .header-content .list-social li i {
+    color: map-get($fontColor,accent);
+    font-size: 15px;
+  }
+  
+//   /*----------------------------------------------------------------------------------*/
+//   /*  Cards
+//   /*-----------------------------------------------------------------------------------*/
+  
+  .position{
+    padding: 20px;
+    float:none;
+  }
+  .positionHeading{
+    text-align: center;
+  }
+  .imagesize{
+    width: 194px;
+    height:259px;
+  }
+
+  .imagesizeCards{
+    widows: 100%;
+    height:285px;
+  }
+
+  //   /*----------------------------------------------------------------------------------*/
+  //   /*  Progress Bar
+  //   /*-----------------------------------------------------------------------------------*/
+  
+
+  .progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid map-get($borderColor,accent);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: map-get($colors,sub);
+    font-size: 24px;
+    color: map-get($fontColor,accent);
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.progress.blue .progress-bar{
+    border-color: map-get($borderColor,sub1);
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+.progress.yellow .progress-bar{
+    border-color: map-get($borderColor,sub2);
+}
+.progress.yellow .progress-left .progress-bar{
+    animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.pink .progress-bar{
+    border-color: map-get($borderColor,sub3);
+}
+.progress.pink .progress-left .progress-bar{
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+.progress.green .progrebackgroundss-bar{
+    border-color: map-get($borderColor,sub4);
+}
+.progress.green .progress-left .progress-bar{
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+.separation{
+  padding:200px;
+}
+
